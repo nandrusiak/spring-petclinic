@@ -8,8 +8,10 @@ pipeline {
             }
         }
         stage('Push to Nexus') {
-            withMaven(mavenSettingsConfig: 'MySettings) {
-                sh "./mvnw clean deploy -Dmaven.test.skip=true"
+            steps {
+                withMaven(mavenSettingsConfig: 'MySettings) {
+                    sh "./mvnw clean deploy -Dmaven.test.skip=true"
+                }
             }
         }
     }
