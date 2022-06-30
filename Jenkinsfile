@@ -1,8 +1,6 @@
 pipeline {
 
-    agent {
-        label "main"
-    }
+    agent any
 
     environment {
         // This can be nexus3 or nexus2
