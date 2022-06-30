@@ -3,15 +3,11 @@ pipeline {
     agent any
 
     environment {
-        // This can be nexus3 or nexus2
+        // http://localhost:8081/repository/maven-snapshots/
         NEXUS_VERSION = "nexus3"
-        // This can be http or https
         NEXUS_PROTOCOL = "http"
-        // Where your Nexus is running
         NEXUS_URL = "localhost:8081"
-        // Repository where we will upload the artifact
-        NEXUS_REPOSITORY = "maven-snapshots"
-        // Jenkins credential id to authenticate to Nexus OSS
+        NEXUS_REPOSITORY = "maven-snapshots/"
         NEXUS_CREDENTIAL_ID = "nexus-credentials"
     }
 
@@ -19,8 +15,7 @@ pipeline {
         stage("mvn build") {
             steps {
                 script {
-                    // If you are using Windows then you should use "bat" step
-                    // Since unit testing is out of the scope we skip them
+
                     sh "./mvnw package -DskipTests=true"
                 }
             }
