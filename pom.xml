@@ -16,6 +16,13 @@
     <developerConnection>scm:git:git@github.com:nandrusiak/spring-petclinic.git</developerConnection>
     <tag>spring-petclinic-3.0.0</tag>
   </scm>
+  
+  <distributionManagement>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>http://localhost:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 
   <properties>
